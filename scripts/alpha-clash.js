@@ -8,6 +8,26 @@
 //     // console.log(playgroundSection);
 // }
 
+function handleKeyboardBtuuonPress(event){
+    const playerPressed = event.key;
+    console.log('player pressed', playerPressed);
+
+    // get expected to press
+    const currentAlphabetElement = document.getElementById('current-alphabet');
+    const currentAlphabet = currentAlphabetElement.innerText;
+    const expetedAlphabet = currentAlphabet.toLocaleLowerCase()
+    console.log(playerPressed, expetedAlphabet);
+
+    // check 
+    if(playerPressed === expetedAlphabet){
+        console.log('You got a point');
+    }
+    else{
+        console.log('You missed a point. You lost a life');
+    }
+}
+document.addEventListener('keyup', handleKeyboardBtuuonPress);
+
 function continueGame(){
     const alphabet = getARandomAlphabet();
     console.log('your random alphabet', alphabet);
